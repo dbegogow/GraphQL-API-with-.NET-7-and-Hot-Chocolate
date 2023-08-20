@@ -3,7 +3,8 @@ using CommanderGQL.Infrastructure.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddDatabase(builder.Configuration);
+    .AddDatabase(builder.Configuration)
+    .AddGraphQL();
 
 var app = builder.Build();
 
