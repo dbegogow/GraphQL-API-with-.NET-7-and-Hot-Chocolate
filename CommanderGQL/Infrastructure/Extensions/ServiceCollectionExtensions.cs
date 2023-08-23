@@ -10,7 +10,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
         => services
-            .AddDbContext<AppDbContext>(options => options
+            .AddPooledDbContextFactory<AppDbContext>(options => options
                 .UseSqlServer(configuration.GetConnectionString("CommandConStr")));
 
     public static IServiceCollection AddGraphQL(this IServiceCollection services)
