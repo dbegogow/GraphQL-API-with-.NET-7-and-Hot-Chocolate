@@ -9,5 +9,6 @@ builder.Services
 var app = builder.Build();
 
 app.MapGraphQL();
+app.UseGraphQLVoyager();
 
 app.Run();
