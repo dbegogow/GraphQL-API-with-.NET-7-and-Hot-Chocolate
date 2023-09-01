@@ -18,7 +18,8 @@ public static class ServiceCollectionExtensions
         services
             .AddGraphQLServer()
             .RegisterDbContext<AppDbContext>(DbContextKind.Pooled)
-            .AddQueryType<Query>();
+            .AddQueryType<Query>()
+            .AddProjections();
 
         return services;
     }
