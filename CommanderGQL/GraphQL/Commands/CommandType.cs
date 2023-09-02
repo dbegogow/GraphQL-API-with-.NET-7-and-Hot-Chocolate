@@ -1,6 +1,5 @@
 ﻿using CommanderGQL.Data;
 using CommanderGQL.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace CommanderGQL.GraphQL.Commands;
 
@@ -19,8 +18,8 @@ public class CommandType : ObjectType<Command>
 
     private class Resolvers
     {
-        public Platform GetPlatform(Command command, AppDbContext context)
+        public Platform GetPlatform([Parent] Command command, AppDbContext context)
             => context.Platforms
-                .FirstOrDefault(p => p.Id == command.Id);
+                .FirstOrDefault(p => p.Id == command.PlatformId);
     }
 }
