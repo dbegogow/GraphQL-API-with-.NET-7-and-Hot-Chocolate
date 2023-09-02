@@ -1,5 +1,6 @@
 ﻿using CommanderGQL.Data;
 using CommanderGQL.GraphQL;
+using CommanderGQL.GraphQL.Platforms;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommanderGQL.Infrastructure.Extensions;
@@ -19,6 +20,7 @@ public static class ServiceCollectionExtensions
             .AddGraphQLServer()
             .RegisterDbContext<AppDbContext>(DbContextKind.Pooled)
             .AddQueryType<Query>()
+            .AddType<PlatformType>()
             .AddProjections();
 
         return services;
