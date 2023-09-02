@@ -5,11 +5,11 @@ namespace CommanderGQL.GraphQL;
 
 public class Query
 {
-    [UseProjection]
+    // [UseProjection]
     public IQueryable<Platform> GetPlatform(AppDbContext context)
         => context.Platforms;
 
-    [UseProjection]
+    // [UseProjection]
     public IQueryable<Command> GetCommand(AppDbContext context)
         => context.Commands;
 }
