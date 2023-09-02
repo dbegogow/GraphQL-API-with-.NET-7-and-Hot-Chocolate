@@ -22,7 +22,7 @@ public class PlatformType : ObjectType<Platform>
 
     private class Resolvers
     {
-        public IQueryable<Command> GetCommands(Platform platform, AppDbContext context)
+        public IQueryable<Command> GetCommands([Parent] Platform platform, AppDbContext context)
             => context.Commands
                 .Where(p => p.PlatformId == platform.Id);
     }
