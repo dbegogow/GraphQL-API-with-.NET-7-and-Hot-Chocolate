@@ -22,7 +22,9 @@ public static class ServiceCollectionExtensions
             .RegisterDbContext<AppDbContext>(DbContextKind.Pooled)
             .AddQueryType<Query>()
             .AddType<PlatformType>()
-            .AddType<CommandType>();
+            .AddType<CommandType>()
+            .AddFiltering()
+            .AddSorting();
         // .AddProjections();
 
         return services;
