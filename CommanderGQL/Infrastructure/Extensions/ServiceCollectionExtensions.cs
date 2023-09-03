@@ -21,6 +21,7 @@ public static class ServiceCollectionExtensions
             .AddGraphQLServer()
             .RegisterDbContext<AppDbContext>(DbContextKind.Pooled)
             .AddQueryType<Query>()
+            .AddMutationType<Mutation>()
             .AddType<PlatformType>()
             .AddType<CommandType>()
             .AddFiltering()
