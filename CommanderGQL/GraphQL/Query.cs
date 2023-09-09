@@ -5,13 +5,13 @@ namespace CommanderGQL.GraphQL;
 
 public class Query
 {
-    // [UseProjection]
+    [UseProjection]
     [UseFiltering]
     [UseSorting]
     public IQueryable<Platform> GetPlatform(AppDbContext context)
         => context.Platforms;
 
-    // [UseProjection]
+    [UseProjection]
     [UseFiltering]
     [UseSorting]
     public IQueryable<Command> GetCommand(AppDbContext context)

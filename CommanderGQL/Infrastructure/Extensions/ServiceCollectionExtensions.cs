@@ -27,8 +27,8 @@ public static class ServiceCollectionExtensions
             .AddType<CommandType>()
             .AddFiltering()
             .AddSorting()
-            .AddInMemorySubscriptions();
-        // .AddProjections();
+            .AddInMemorySubscriptions()
+            .AddProjections();
 
         return services;
     }
