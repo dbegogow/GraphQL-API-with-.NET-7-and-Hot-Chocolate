@@ -10,5 +10,6 @@ var app = builder.Build();
 
 app.MapGraphQL();
 app.UseGraphQLVoyager();
+app.UseWebSockets();
 
 app.Run();

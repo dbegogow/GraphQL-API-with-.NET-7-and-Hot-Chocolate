@@ -22,10 +22,12 @@ public static class ServiceCollectionExtensions
             .RegisterDbContext<AppDbContext>(DbContextKind.Pooled)
             .AddQueryType<Query>()
             .AddMutationType<Mutation>()
+            .AddSubscriptionType<Subscription>()
             .AddType<PlatformType>()
             .AddType<CommandType>()
             .AddFiltering()
-            .AddSorting();
+            .AddSorting()
+            .AddInMemorySubscriptions();
         // .AddProjections();
 
         return services;
