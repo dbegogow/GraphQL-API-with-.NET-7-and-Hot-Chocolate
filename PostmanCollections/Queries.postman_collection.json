@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "1736e033-b444-4cb9-8096-0679ab5bd326",
+		"name": "Queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24865193"
+	},
+	"item": [
+		{
+			"name": "Get Platforms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    platform{\r\n        id\r\n        name\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://localhost:7014/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "Parallel Platforms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    a: platform{\r\n        id\r\n        name\r\n    }\r\n    b: platform{\r\n        id\r\n        name\r\n    }\r\n    c: platform{\r\n        id\r\n        name\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://localhost:7014/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Platforms and Commands",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    platform{\r\n        id\r\n        name\r\n        commands{\r\n            id\r\n            howTo\r\n            commandLine\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://localhost:7014/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Query",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    command(where: {platformId: {eq: 1}})\r\n    {\r\n        id\r\n        platform{\r\n            name\r\n            id\r\n        }\r\n        howTo\r\n        commandLine\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://localhost:7014/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "Sorting Query",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    platform(order: {name: DESC})\r\n    {\r\n        name\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "https://localhost:7014/graphql"
+			},
+			"response": []
+		}
+	]
+}
